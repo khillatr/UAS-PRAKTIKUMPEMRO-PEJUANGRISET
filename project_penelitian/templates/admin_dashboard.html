@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
+
+    <!-- CSS utama -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- CSS dashboard -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <span>Halo, {{ username }} (Admin)!</span>
+            <a href="/logout" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dashboard Administrator</h1>
+            <p>Kelola seluruh data penelitian dan akun dosen di sistem.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="dashboard-container">
+        <div class="feature-grid">
+
+            <div class="card">
+                <h3>Verifikasi Penelitian</h3>
+                <p>Lihat dan setujui hasil penelitian yang diajukan dosen.</p>
+                <a href="/admin/verifikasi" class="btn-card">Lihat</a>
+            </div>
+
+            <div class="card">
+                <h3>Semua Penelitian</h3>
+                <p>Cek seluruh penelitian, baik menunggu, disetujui, atau ditolak.</p>
+                <a href="/admin/penelitian" class="btn-card">Lihat</a>
+            </div>
+
+            <div class="card">
+                <h3>Kelola Akun Dosen</h3>
+                <p>Tambah, edit, atau hapus akun dosen.</p>
+                <a href="/admin/users" class="btn-card">Kelola</a>
+            </div>
+
+            <div class="card">
+                <h3>Logout</h3>
+                <p>Keluar dari panel admin.</p>
+                <a href="/logout" class="btn-card logout-btn">Keluar</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

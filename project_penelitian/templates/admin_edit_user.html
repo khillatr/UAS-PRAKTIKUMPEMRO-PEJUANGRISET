@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tambah.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <a href="/admin/users" class="btn-login">Kembali</a>
+        </div>
+    </nav>
+
+    <div class="tambah-container">
+        <h2>Edit User</h2>
+
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" value="{{ user.username }}" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" value="{{ user.password }}" required>
+
+            <label>Role:</label>
+            <select name="role" required>
+                <option value="dosen" {% if user.role=='dosen' %}selected{% endif %}>Dosen</option>
+                <option value="admin" {% if user.role=='admin' %}selected{% endif %}>Admin</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Update</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+
+<h2>Data Penelitian</h2>
+<a href="/tambah" class="btn-add">+ Tambah Data</a>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Judul</th>
+        <th>Tahun</th>
+        <th>Kategori</th>
+        <th>Aksi</th>
+    </tr>
+
+    {% for p in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ p.judul }}</td>
+        <td>{{ p.tahun }}</td>
+        <td>{{ p.kategori }}</td>
+        <td>
+            <a href="/edit/{{ p.id }}" class="btn-edit">Edit</a> |
+            <a href="/hapus/{{ p.id }}" class="btn-delete">Hapus</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

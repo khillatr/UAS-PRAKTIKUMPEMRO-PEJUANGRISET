@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tambah.css') }}">
+</head>
+<h2>Tambah Penelitian</h2>
+
+<form method="POST">
+    Judul:<br>
+    <input type="text" name="judul"><br><br>
+
+    Tahun:<br>
+    <input type="number" name="tahun"><br><br>
+
+    Kategori:<br>
+    <input type="text" name="kategori"><br><br>
+
+    <button type="submit">Simpan</button>
+</form>

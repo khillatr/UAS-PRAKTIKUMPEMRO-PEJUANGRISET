@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Penelitian Dosen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Penelitian Dosen</div>
+        <div class="nav-links">
+            <a href="/">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#fitur">Fitur</a>
+            <a href="/login" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Sistem Penelitian dan Pengabdian Dosen</h1>
+            <p>Kelola data penelitian dan pengabdian dosen dengan mudah, cepat, dan terorganisir.</p>
+            <a href="/login" class="btn">Mulai Sekarang</a>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="tentang" class="about">
+        <h2>Tentang Sistem</h2>
+        <p>
+            Sistem ini dirancang untuk membantu dosen dalam mengelola kegiatan penelitian dan pengabdian.
+            Dengan antarmuka yang sederhana, dosen dapat mencatat, memantau, dan melaporkan kegiatan mereka secara efisien.
+        </p>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="fitur" class="features">
+        <h2>Fitur Utama</h2>
+        <div class="feature-list">
+            <div class="feature">
+                <h3>1. Manajemen Data</h3>
+                <p>Menyimpan data penelitian dan pengabdian secara terstruktur dan aman.</p>
+            </div>
+            <div class="feature">
+                <h3>2. Mengupdate Data</h3>
+                <p>Memperbarui data penelitian secara praktis.</p>
+            </div>
+            <div class="feature">
+                <h3>3. Hapus Data</h3>
+                <p>Menghapus Data Penelitian jika sudah tidak relevan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Sistem Penelitian Dosen - Kelompok Pejuang Riset.</p>
+    </footer>
+</body>
+</html>

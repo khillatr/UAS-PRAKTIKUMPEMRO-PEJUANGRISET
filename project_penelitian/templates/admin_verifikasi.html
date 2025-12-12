@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Verifikasi Penelitian</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <span>Halo, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <div class="data-container">
+        <h2>Verifikasi Penelitian</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Tahun</th>
+                    <th>Aksi</th>
+                </tr>
+
+                {% for p in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ p.judul }}</td>
+                    <td>{{ p.kategori }}</td>
+                    <td>{{ p.tahun }}</td>
+                    <td>
+                        <a href="/admin/setujui/{{ p.id }}" class="btn-edit">Setujui</a>
+                        <a href="/admin/tolak/{{ p.id }}" class="btn-delete">Tolak</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        {% if data|length == 0 %}
+            <p style="text-align:center; margin-top:20px;">Tidak ada data menunggu.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

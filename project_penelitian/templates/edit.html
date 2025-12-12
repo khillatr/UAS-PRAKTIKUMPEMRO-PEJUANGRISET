@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Penelitian</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+
+<body>
+
+    <div class="edit-container">
+        <h2>Edit Penelitian</h2>
+
+        <form method="POST">
+
+            <label>Judul:</label>
+            <input type="text" name="judul" value="{{ penelitian.judul }}" required>
+
+            <label>Tahun:</label>
+            <input type="number" name="tahun" value="{{ penelitian.tahun }}" required>
+
+            <label>Kategori:</label>
+            <input type="text" name="kategori" value="{{ penelitian.kategori }}" required>
+
+            <button type="submit" class="btn-update">Update</button>
+        </form>
+    </div>
+
+</body>
+</html>

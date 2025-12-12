@@ -1,0 +1,221 @@
+/* ========== GLOBAL STYLE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #1e3a8a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #93c5fd;
+}
+
+.btn-login {
+  background-color: #3b82f6;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.btn-login:hover {
+  background-color: #2563eb;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+              url("https://images.unsplash.com/photo-1581091870634-3e79e90a6b53?auto=format&fit=crop&w=1400&q=80") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.hero-content .btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #2563eb;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about {
+  padding: 70px 100px;
+  background-color: white;
+  text-align: center;
+}
+
+.about h2 {
+  color: #1e3a8a;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ========== FEATURES SECTION ========== */
+.features {
+  padding: 70px 100px;
+  background-color: #f0f4ff;
+  text-align: center;
+}
+
+.features h2 {
+  color: #1e3a8a;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.feature {
+  background-color: white;
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== LOGIN PAGE ========== */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #333, #2563eb);
+}
+
+.login-container {
+  background-color: white;
+  width: 360px;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.login-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #1e40af;
+}
+
+.login-container p {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}

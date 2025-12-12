@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Dosen</title>
+
+    <!-- CSS utama -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- CSS dashboard -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+    <!-- CSS tabel dan tombol -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Penelitian Dosen</div>
+        <div class="nav-links">
+            <span>Halo, {{ username }}!</span>
+            <a href="/logout" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dashboard Dosen</h1>
+            <p>Kelola dan pantau status penelitian Anda.</p>
+        </div>
+    </section>
+
+    <div class="dashboard-container">
+
+        <!-- STATISTICS CARDS -->
+        <div class="feature-grid">
+
+            <div class="card">
+                <h3>Total Penelitian</h3>
+                <p style="font-size: 22px; font-weight: bold;">{{ total }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Menunggu</h3>
+                <p style="color: orange; font-size: 22px; font-weight: bold;">{{ menunggu }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Disetujui</h3>
+                <p style="color: green; font-size: 22px; font-weight: bold;">{{ disetujui }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Ditolak</h3>
+                <p style="color: red; font-size: 22px; font-weight: bold;">{{ ditolak }}</p>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <!-- BUTTON TAMBAH DATA -->
+        <a href="/tambah" class="btn-add">+ Tambah Penelitian</a>
+
+        <!-- TABLE LIST -->
+        <div class="table-wrapper" style="margin-top: 20px;">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Tahun</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+
+                {% for p in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ p.judul }}</td>
+                    <td>{{ p.kategori }}</td>
+                    <td>{{ p.tahun }}</td>
+
+                    <td class="status {{ p.status }}">
+                        {{ p.status }}
+                    </td>
+
+                    <td>
+                        <a href="/edit/{{ p.id }}" class="btn-edit">Edit</a>
+                        <a href="/hapus/{{ p.id }}" class="btn-delete">Hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        {% if data|length == 0 %}
+            <p style="text-align:center; margin-top:20px;">Belum ada penelitian.</p>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

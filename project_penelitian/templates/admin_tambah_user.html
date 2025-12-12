@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah User</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tambah.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <a href="/admin/users" class="btn-login">Kembali</a>
+        </div>
+    </nav>
+
+    <div class="tambah-container">
+        <h2>Tambah User</h2>
+
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <label>Role:</label>
+            <select name="role" required>
+                <option value="">-- Pilih Role --</option>
+                <option value="dosen">Dosen</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Simpan</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Semua Penelitian</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <span>Halo, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <!-- BODY -->
+    <div class="data-container">
+        <h2>Semua Penelitian</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Tahun</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for p in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ p.judul }}</td>
+                    <td>{{ p.kategori }}</td>
+                    <td>{{ p.tahun }}</td>
+                    <td class="status {{ p.status }}">
+                        {{ p.status }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        {% if data|length == 0 %}
+            <p style="text-align:center; margin-top:20px;">Belum ada data penelitian.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

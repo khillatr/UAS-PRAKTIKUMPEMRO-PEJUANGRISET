@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelola Akun Dosen</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='data.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <span>Halo, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-login">Logout</a>
+        </div>
+    </nav>
+
+    <div class="data-container">
+        <h2>Kelola Akun Dosen</h2>
+
+        <a href="/admin/users/tambah" class="btn-add">Tambah User</a>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Aksi</th>
+                </tr>
+
+                {% for u in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.role }}</td>
+                    <td>
+                        <a href="/admin/users/edit/{{ u.id }}" class="btn-edit">Edit</a>
+                        <a href="/admin/users/hapus/{{ u.id }}" class="btn-delete">Hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        {% if users|length == 0 %}
+            <p style="text-align:center; margin-top:20px;">Belum ada user.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
